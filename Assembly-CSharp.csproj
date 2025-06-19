@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\Planning\Node.cs" />
     <Compile Include="Assets\Scripts\GUI\PersonVisual.cs" />
     <Compile Include="Assets\Scripts\Actions\RestAction.cs" />
+    <Compile Include="Assets\Scripts\World\Resources\ResourceQueue.cs" />
     <Compile Include="Assets\Scripts\Actions\GetCitizenAction.cs" />
     <Compile Include="Assets\Scripts\Entities\Doctor.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToSecondBuildingAction.cs" />

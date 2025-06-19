@@ -11,7 +11,7 @@ namespace WorldEcon.Actions
 
         public override bool PostPerform()
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 1);
             return true;
         }
     }

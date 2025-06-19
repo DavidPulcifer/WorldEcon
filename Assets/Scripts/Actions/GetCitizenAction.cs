@@ -9,13 +9,13 @@ namespace WorldEcon.Actions
         GameObject resource;
         public override bool PrePerform()
         {
-            target = WorldEnvironment.Instance.RemoveCitizen();
+            target = WorldEnvironment.Instance.GetResourceQueue("citizens").RemoveResource();
             if (target == null) return false;
-            resource = WorldEnvironment.Instance.RemoveResource();
+            resource = WorldEnvironment.Instance.GetResourceQueue("resources").RemoveResource();
             if (resource != null) inventory.AddItem(resource);
             else
             {
-                WorldEnvironment.Instance.AddCitizen(target);
+                WorldEnvironment.Instance.GetResourceQueue("citizens").AddResource(target);
                 target = null;
                 return false;
             }

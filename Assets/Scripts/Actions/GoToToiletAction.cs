@@ -7,7 +7,7 @@ namespace WorldEcon.Actions
     {
         public override bool PrePerform()
         {
-            target = WorldEnvironment.Instance.RemoveToilet();
+            target = WorldEnvironment.Instance.GetResourceQueue("toilets").RemoveResource();
             if (target == null) return false;
             inventory.AddItem(target);
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("FreeToilet", -1);
@@ -16,7 +16,7 @@ namespace WorldEcon.Actions
 
         public override bool PostPerform()
         {
-            WorldEnvironment.Instance.AddToilet(target);
+            WorldEnvironment.Instance.GetResourceQueue("toilets").AddResource(target);
             inventory.RemoveItem(target);
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("FreeToilet", 1);
             beliefs.RemoveWorldState("busting");

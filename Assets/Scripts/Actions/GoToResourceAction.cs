@@ -14,7 +14,7 @@ namespace WorldEcon.Actions
         public override bool PostPerform()
         {
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("HandlingCitizen", 1);
-            WorldEnvironment.Instance.AddResource(target);
+            WorldEnvironment.Instance.GetResourceQueue("resources").AddResource(target);
             inventory.RemoveItem(target);
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("FreeResource", 1);
             return true;

@@ -7,7 +7,7 @@ namespace WorldEcon.Actions
     {
         public override bool PrePerform()
         {
-            target = WorldEnvironment.Instance.RemoveOffice();
+            target = WorldEnvironment.Instance.GetResourceQueue("offices").RemoveResource();
             if (target == null) return false;
             inventory.AddItem(target);
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("FreeOffice", -1);
@@ -16,7 +16,7 @@ namespace WorldEcon.Actions
 
         public override bool PostPerform()
         {
-            WorldEnvironment.Instance.AddOffice(target);
+            WorldEnvironment.Instance.GetResourceQueue("offices").AddResource(target);
             inventory.RemoveItem(target);
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("FreeOffice", 1);
             return true;

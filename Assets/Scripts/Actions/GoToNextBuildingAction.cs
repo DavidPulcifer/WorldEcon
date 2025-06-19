@@ -12,7 +12,7 @@ namespace WorldEcon.Actions
         public override bool PostPerform()
         {
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("CitizenWaiting", 1);
-            WorldEnvironment.Instance.AddCitizen(gameObject);
+            WorldEnvironment.Instance.GetResourceQueue("citizens").AddResource(gameObject);
             beliefs.ModifyWorldState("atFinalBuilding", 1);
             return true;
         }        
