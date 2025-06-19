@@ -4,7 +4,7 @@ namespace WorldEcon.Entities
 {
     public class Doctor : Person
     {
-        void Start()
+        new void Start()
         {
             base.Start();
             SubGoal s1 = new SubGoal("treatCitizen", 1, true);

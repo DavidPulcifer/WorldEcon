@@ -8,7 +8,7 @@ namespace WorldEcon.Planning
 {
     public class EntityPlanner
     {
-        public Queue<AbstractAction> Plan(List<AbstractAction> actions, Dictionary<string, int> goals, WorldStates worldStates)
+        public Queue<AbstractAction> Plan(List<AbstractAction> actions, Dictionary<string, int> goals, WorldStates beliefStates)
         {
             List<AbstractAction> usableActions = new List<AbstractAction>();
             foreach (AbstractAction action in actions)
@@ -17,13 +17,12 @@ namespace WorldEcon.Planning
             }
 
             List<Node> leaves = new List<Node>();
-            Node start = new Node(null, 0, WorldEnvironment.Instance.GetWorldEnvironment().GetWorldStates(), null);
+            Node start = new Node(null, 0, WorldEnvironment.Instance.GetWorldEnvironment().GetWorldStates(), beliefStates.GetWorldStates(), null);
 
             bool success = BuildGraph(start, leaves, usableActions, goals);
 
             if (!success)
-            {
-                Debug.Log("No Plan Found");
+            {                
                 return null;
             }
 

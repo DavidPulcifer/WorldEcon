@@ -58,12 +58,16 @@
     <Compile Include="Assets\Scripts\Actions\GoToSecondBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Actions\AbstractAction.cs" />
     <Compile Include="Assets\Scripts\Controls\PointToMove.cs" />
+    <Compile Include="Assets\Scripts\Actions\GoToResourceAction.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Entities\Person.cs" />
     <Compile Include="Assets\Scripts\Entities\Citizen.cs" />
     <Compile Include="Assets\Scripts\Planning\EntityPlanner.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToNextBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Actions\Requirements\AbstractRequirement.cs" />
+    <Compile Include="Assets\Scripts\Actions\GoHomeAction.cs" />
+    <Compile Include="Assets\Scripts\Actions\HandleCitizenAction.cs" />
+    <Compile Include="Assets\Scripts\Entities\Inventory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

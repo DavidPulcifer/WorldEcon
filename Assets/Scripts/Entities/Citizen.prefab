@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2332960415047907115}
   - component: {fileID: 378653279139026866}
   - component: {fileID: 1613932839285864853}
+  - component: {fileID: 2989209771362059342}
   m_Layer: 0
   m_Name: Citizen
   m_TagString: Untagged
@@ -228,12 +229,37 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: 
-  duration: 5
+  duration: 3
   preConditions:
   - key: hasArrived
     value: 0
   afterEffects:
   - key: hasRegistered
     value: 0
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &2989209771362059342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354441330744665043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134a396866d337e4c85fc95125fd2aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: HandleCitizen
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 0
+  preConditions:
+  - key: atFinalBuilding
+    value: 1
+  afterEffects:
+  - key: isHandled
+    value: 1
   agent: {fileID: 0}
   running: 0

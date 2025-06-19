@@ -1,4 +1,3 @@
-using UnityEngine;
 using WorldEcon.World;
 
 namespace WorldEcon.Actions
@@ -14,6 +13,7 @@ namespace WorldEcon.Actions
         {
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("CitizenWaiting", 1);
             WorldEnvironment.Instance.AddCitizen(gameObject);
+            beliefs.ModifyWorldState("atFinalBuilding", 1);
             return true;
         }        
     }

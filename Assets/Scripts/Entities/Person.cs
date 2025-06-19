@@ -7,10 +7,12 @@ using WorldEcon.World;
 
 namespace WorldEcon.Entities
 {
+    //GAgent
     public class Person : MonoBehaviour
     {
         public List<AbstractAction> actions = new List<AbstractAction>();
         public Dictionary<SubGoal, int> goals = new Dictionary<SubGoal, int>();
+        public Inventory inventory = new Inventory();
         public WorldStates beliefs = new WorldStates();
 
         EntityPlanner planner;
@@ -56,7 +58,7 @@ namespace WorldEcon.Entities
                 var sortedGoals = from entry in goals orderby entry.Value descending select entry;
                 foreach (KeyValuePair<SubGoal, int> subGoal in sortedGoals)
                 {
-                    actionQueue = planner.Plan(actions, subGoal.Key.subGoals, null);
+                    actionQueue = planner.Plan(actions, subGoal.Key.subGoals, beliefs);
                     if (actionQueue != null)
                     {
                         currentGoal = subGoal.Key;

@@ -16,6 +16,12 @@ namespace WorldEcon.World
             worldEnvironmentStates = new WorldStates();
             citizens = new Queue<GameObject>();
             resources = new Queue<GameObject>();
+
+            GameObject[] resourceObjects = GameObject.FindGameObjectsWithTag("Resource");
+            foreach (GameObject resourceObject in resourceObjects) resources.Enqueue(resourceObject);
+
+            if (resourceObjects.Length > 0) worldEnvironmentStates.ModifyWorldState("FreeResource", resourceObjects.Length);
+            Debug.Log(resourceObjects.Length);
         }
 
         private WorldEnvironment()
@@ -34,9 +40,9 @@ namespace WorldEcon.World
             return citizens.Dequeue();
         }
 
-        public void AddResource(GameObject citizen)
+        public void AddResource(GameObject resource)
         {
-            resources.Enqueue(citizen);
+            resources.Enqueue(resource);
         }
 
         public GameObject RemoveResource()
