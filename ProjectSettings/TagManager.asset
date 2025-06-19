@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Resource
+  - Home
+  - Location1
+  - Location2
+  - Location3
+  - Office
+  - Toilet
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WorldEcon.Actions
 {
-    public class GoToBuildingAction : AbstractAction
+    public class Rest : AbstractAction
     {
         public override bool PrePerform()
         {
@@ -10,8 +10,9 @@ namespace WorldEcon.Actions
         }
 
         public override bool PostPerform()
-        {
+        {            
+            beliefs.RemoveWorldState("exhausted");
             return true;
-        }                
+        }
     }
 }

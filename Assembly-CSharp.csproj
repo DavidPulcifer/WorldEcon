@@ -50,18 +50,25 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\World\WorldStates.cs" />
     <Compile Include="Assets\Scripts\Entities\SubGoal.cs" />
+    <Compile Include="Assets\Scripts\World\CitizenSpawner.cs" />
     <Compile Include="Assets\Scripts\World\WorldEnvironment.cs" />
+    <Compile Include="Assets\Scripts\Actions\ResearchAction.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Planning\Node.cs" />
+    <Compile Include="Assets\Scripts\GUI\PersonVisual.cs" />
+    <Compile Include="Assets\Scripts\Actions\RestAction.cs" />
     <Compile Include="Assets\Scripts\Actions\GetCitizenAction.cs" />
     <Compile Include="Assets\Scripts\Entities\Doctor.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToSecondBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Actions\AbstractAction.cs" />
+    <Compile Include="Assets\Scripts\GUI\PersonEditor.cs" />
     <Compile Include="Assets\Scripts\Controls\PointToMove.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToResourceAction.cs" />
+    <Compile Include="Assets\Scripts\Entities\Mayor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Entities\Person.cs" />
     <Compile Include="Assets\Scripts\Entities\Citizen.cs" />
+    <Compile Include="Assets\Scripts\Actions\GoToToiletAction.cs" />
     <Compile Include="Assets\Scripts\Planning\EntityPlanner.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToNextBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Actions\Requirements\AbstractRequirement.cs" />

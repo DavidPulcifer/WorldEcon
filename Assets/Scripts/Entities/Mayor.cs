@@ -2,16 +2,16 @@ using UnityEngine;
 
 namespace WorldEcon.Entities
 {
-    public class Doctor : Person
+    public class Mayor : Person
     {
         new void Start()
         {
             base.Start();
-            SubGoal s1 = new SubGoal("treatCitizen", 1, false);
-            goals.Add(s1, 3);
+            SubGoal s1 = new SubGoal("research", 1, false);
+            goals.Add(s1, 1);
 
             SubGoal s2 = new SubGoal("rested", 1, false);
-            goals.Add(s2, 1);
+            goals.Add(s2, 3);
 
             SubGoal s3 = new SubGoal("relief", 1, false);
             goals.Add(s3, 2);

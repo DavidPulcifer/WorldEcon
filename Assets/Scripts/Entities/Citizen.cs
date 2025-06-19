@@ -11,6 +11,18 @@ namespace WorldEcon.Entities
             goals.Add(s1, 3);
             SubGoal s2 = new SubGoal("isHandled", 1, true);
             goals.Add(s2, 5);
+            SubGoal s3 = new SubGoal("isHome", 1, true);
+            goals.Add(s3, 5);
+            SubGoal s4 = new SubGoal("relief", 1, true);
+            goals.Add(s4, 6);
+
+            Invoke("NeedRelief", Random.Range(10, 20));
+        }
+
+        void NeedRelief()
+        {
+            beliefs.ModifyWorldState("busting", 1);
+            Invoke("NeedRelief", Random.Range(10, 20));
         }
     }
 }

@@ -7,6 +7,11 @@ namespace WorldEcon.Entities
     {
         List<GameObject> items = new List<GameObject>();
 
+        public List<GameObject> GetItems()
+        {
+            return items;
+        }
+
         public void AddItem(GameObject item)
         {
             items.Add(item);

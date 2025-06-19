@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using WorldEcon.Actions.Requirements;
 using WorldEcon.Entities;
 using WorldEcon.World;
 
@@ -22,7 +21,7 @@ namespace WorldEcon.Actions
         public Dictionary<string, int> preconditions;
         public Dictionary<string, int> effects;
 
-        public WorldStates agentBeliefs;
+        // public WorldStates agentBeliefs;
 
         public Inventory inventory;
         public WorldStates beliefs;

@@ -4,14 +4,15 @@ namespace WorldEcon.Actions
 {
     public class GoHomeAction : AbstractAction
     {
-        public override bool PostPerform()
+        public override bool PrePerform()
         {
             return true;
         }
 
-        public override bool PrePerform()
+        public override bool PostPerform()
         {
+            Destroy(gameObject);
             return true;
-        }        
+        }
     }
 }

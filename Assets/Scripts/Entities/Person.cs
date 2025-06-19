@@ -20,6 +20,7 @@ namespace WorldEcon.Entities
         public AbstractAction currentAction;
         SubGoal currentGoal;
         bool invoked = false;
+        Vector3 destination = Vector3.zero;
 
         public void Start()
         {
@@ -41,7 +42,8 @@ namespace WorldEcon.Entities
         {
             if (currentAction != null && currentAction.running)
             {
-                if (currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1f)
+                float distanceToTarget = Vector3.Distance(destination, transform.position);
+                if (distanceToTarget < 4f)
                 {
                     if (!invoked)
                     {
@@ -86,7 +88,12 @@ namespace WorldEcon.Entities
                     if (currentAction.target != null)
                     {
                         currentAction.running = true;
-                        currentAction.agent.SetDestination(currentAction.target.transform.position);
+
+                        destination = currentAction.target.transform.position;
+                        Transform destinationObject = currentAction.target.transform.Find("Destination");
+                        if (destinationObject != null) destination = destinationObject.position;
+
+                        currentAction.agent.SetDestination(destination);
                     }
                 }
                 else

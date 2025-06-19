@@ -13,7 +13,8 @@ namespace WorldEcon.Actions
 
         public override bool PostPerform()
         {
-            WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("CitizenHandled", 1);
+            WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("Handled", 1);
+            beliefs.ModifyWorldState("isHandled", 1);
             inventory.RemoveItem(target);
             return true;
         }

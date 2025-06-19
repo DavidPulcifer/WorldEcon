@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7354441330744665043
+--- !u!1 &6363499612269166031
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,56 +8,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 838560471712677248}
-  - component: {fileID: 4081022494312884906}
-  - component: {fileID: 1082625339493616735}
-  - component: {fileID: 898358340910155704}
-  - component: {fileID: 278893559473735782}
-  - component: {fileID: 2442423006998251050}
-  - component: {fileID: 2332960415047907115}
-  - component: {fileID: 378653279139026866}
-  - component: {fileID: 1613932839285864853}
-  - component: {fileID: 2989209771362059342}
-  - component: {fileID: 2172473552857324835}
-  - component: {fileID: 8779358443709958213}
-  - component: {fileID: 1713334254644489405}
+  - component: {fileID: 9191565849523645137}
+  - component: {fileID: 5410213969381650840}
+  - component: {fileID: 5535596925256085050}
+  - component: {fileID: 8204940659716011036}
+  - component: {fileID: 3361133113122622674}
+  - component: {fileID: 4451838114114101340}
+  - component: {fileID: 780325603273004820}
+  - component: {fileID: 384699658314639547}
+  - component: {fileID: 2864934898906348167}
+  - component: {fileID: 2472498134980558456}
+  - component: {fileID: 4168922741546254741}
   m_Layer: 0
-  m_Name: Citizen
+  m_Name: Doctor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &838560471712677248
+--- !u!4 &9191565849523645137
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: -19.8}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4081022494312884906
+--- !u!33 &5410213969381650840
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1082625339493616735
+--- !u!23 &5535596925256085050
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -74,7 +72,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 647c2962391c6e54090691236cad93e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,13 +94,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &898358340910155704
+--- !u!136 &8204940659716011036
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -119,13 +117,13 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &278893559473735782
+--- !u!195 &3361133113122622674
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
@@ -141,163 +139,104 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2442423006998251050
+--- !u!114 &4451838114114101340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31584fc3baa763940a6ffad964e2d2f1, type: 3}
+  m_Script: {fileID: 11500000, guid: fac2f1fdab4e28145a4a962a1a991bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actions: []
   currentAction: {fileID: 0}
---- !u!114 &2332960415047907115
+--- !u!114 &780325603273004820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ab03dec773aa7438047ff85238ac90, type: 3}
+  m_Script: {fileID: 11500000, guid: d2031bdc877f5254c853a549e46bb720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Go To Building
-  cost: 1
-  target: {fileID: 0}
-  targetTag: Location1
-  duration: 1
-  preConditions: []
-  afterEffects:
-  - key: hasArrived
-    value: 1
-  agent: {fileID: 0}
-  running: 0
---- !u!114 &378653279139026866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 230dedd99b2af8647bc9c9e7178ff1cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Go To Next Building
-  cost: 1
-  target: {fileID: 0}
-  targetTag: Location3
-  duration: 1
-  preConditions:
-  - key: hasRegistered
-    value: 0
-  afterEffects:
-  - key: isWaiting
-    value: 0
-  agent: {fileID: 0}
-  running: 0
---- !u!114 &1613932839285864853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4401ac5e30603774989537133a2f6649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Go To 2nd Building
-  cost: 1
-  target: {fileID: 0}
-  targetTag: Location2
-  duration: 1
-  preConditions:
-  - key: hasArrived
-    value: 0
-  afterEffects:
-  - key: hasRegistered
-    value: 0
-  agent: {fileID: 0}
-  running: 0
---- !u!114 &2989209771362059342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 134a396866d337e4c85fc95125fd2aef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: HandleCitizen
+  actionName: Get Citizen
   cost: 1
   target: {fileID: 0}
   targetTag: 
   duration: 1
   preConditions:
-  - key: atFinalBuilding
+  - key: CitizenWaiting
+    value: 1
+  - key: FreeResource
     value: 1
   afterEffects:
-  - key: isHandled
+  - key: patientGotten
     value: 1
   agent: {fileID: 0}
   running: 0
---- !u!114 &2172473552857324835
+--- !u!114 &384699658314639547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d845b4d3c9e9e41bc53ad84c486440, type: 3}
+  m_Script: {fileID: 11500000, guid: dc5cb6d0bb237a64eb80dc778d9f36f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Go Home
+  actionName: Go To Resource
   cost: 1
   target: {fileID: 0}
-  targetTag: Home
+  targetTag: 
   duration: 1
   preConditions:
-  - key: isHandled
+  - key: patientGotten
     value: 0
   afterEffects:
-  - key: isHome
+  - key: treatCitizen
     value: 0
   agent: {fileID: 0}
   running: 0
---- !u!114 &8779358443709958213
+--- !u!114 &2864934898906348167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed229a510a4c3274584f41bb27b933ba, type: 3}
+  m_Script: {fileID: 11500000, guid: a0c58a5050aac4c4584fcad76c93c8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPerson: {fileID: 2442423006998251050}
---- !u!114 &1713334254644489405
+  actionName: Rest
+  cost: 1
+  target: {fileID: 0}
+  targetTag: 
+  duration: 5
+  preConditions:
+  - key: exhausted
+    value: 0
+  afterEffects:
+  - key: rested
+    value: 0
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &2472498134980558456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7354441330744665043}
+  m_GameObject: {fileID: 6363499612269166031}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 123ff0402bec0a54ab09713738176ce4, type: 3}
@@ -318,3 +257,16 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
+--- !u!114 &4168922741546254741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363499612269166031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed229a510a4c3274584f41bb27b933ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisPerson: {fileID: 4451838114114101340}
