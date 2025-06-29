@@ -21,6 +21,7 @@ namespace WorldEcon.Entities
         {
             foreach (GameObject item in items)
             {
+                if (item == null) break;
                 if (item.tag == tag) return item;
             }
             return null;

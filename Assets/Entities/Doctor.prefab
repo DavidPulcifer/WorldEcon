@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 384699658314639547}
   - component: {fileID: 2864934898906348167}
   - component: {fileID: 2472498134980558456}
+  - component: {fileID: 5572480626992952927}
   - component: {fileID: 4168922741546254741}
   m_Layer: 0
   m_Name: Doctor
@@ -257,6 +258,25 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
+--- !u!114 &5572480626992952927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363499612269166031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6756c94ab03f4d47a23ac80a285eb25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: busting
+  stateStatus: 10
+  stateDecayRate: 2
+  resourcePrefab: {fileID: 7771433622684618787, guid: c5c95ba3badfb704498b636176719842, type: 3}
+  queueName: puddles
+  worldState: FreePuddle
+  action: {fileID: 2472498134980558456}
 --- !u!114 &4168922741546254741
 MonoBehaviour:
   m_ObjectHideFlags: 0

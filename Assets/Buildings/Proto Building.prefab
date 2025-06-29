@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 232504759591191561}
   - component: {fileID: 1601227664679902584}
   m_Layer: 0
-  m_Name: Building
+  m_Name: Proto Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

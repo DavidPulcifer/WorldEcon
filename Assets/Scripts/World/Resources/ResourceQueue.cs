@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace WorldEcon.World.Resources
@@ -32,6 +33,11 @@ namespace WorldEcon.World.Resources
         public void AddResource(GameObject resource)
         {
             resourceQueue.Enqueue(resource);
+        }
+
+        public void RemoveResource(GameObject resource)
+        {
+            resourceQueue = new Queue<GameObject>(resourceQueue.Where(p => p != resource));
         }
 
         public GameObject RemoveResource()

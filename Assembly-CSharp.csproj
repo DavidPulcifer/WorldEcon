@@ -53,6 +53,7 @@
     <Compile Include="Assets\Scripts\World\CitizenSpawner.cs" />
     <Compile Include="Assets\Scripts\World\WorldEnvironment.cs" />
     <Compile Include="Assets\Scripts\Actions\ResearchAction.cs" />
+    <Compile Include="Assets\Scripts\World\Resources\Resource.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Planning\Node.cs" />
     <Compile Include="Assets\Scripts\GUI\PersonVisual.cs" />
@@ -63,19 +64,50 @@
     <Compile Include="Assets\Scripts\Actions\GoToSecondBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Actions\AbstractAction.cs" />
     <Compile Include="Assets\Scripts\GUI\PersonEditor.cs" />
+    <Compile Include="Assets\Scripts\Entities\Janitor.cs" />
     <Compile Include="Assets\Scripts\Controls\PointToMove.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToResourceAction.cs" />
     <Compile Include="Assets\Scripts\Entities\Mayor.cs" />
+    <Compile Include="Assets\Scripts\World\Resources\ResourceData.cs" />
+    <Compile Include="Assets\Scripts\Controls\CameraMover.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\World\StateMonitor.cs" />
     <Compile Include="Assets\Scripts\Entities\Person.cs" />
     <Compile Include="Assets\Scripts\Entities\Citizen.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToToiletAction.cs" />
     <Compile Include="Assets\Scripts\Planning\EntityPlanner.cs" />
     <Compile Include="Assets\Scripts\Actions\GoToNextBuildingAction.cs" />
+    <Compile Include="Assets\Scripts\Actions\CleanPuddleAction.cs" />
+    <Compile Include="Assets\Scripts\Controls\UserControls.cs" />
     <Compile Include="Assets\Scripts\Actions\Requirements\AbstractRequirement.cs" />
     <Compile Include="Assets\Scripts\Actions\GoHomeAction.cs" />
     <Compile Include="Assets\Scripts\Actions\HandleCitizenAction.cs" />
     <Compile Include="Assets\Scripts\Entities\Inventory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

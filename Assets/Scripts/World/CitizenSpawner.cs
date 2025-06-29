@@ -8,6 +8,7 @@ namespace WorldEcon.World
         [SerializeField] GameObject citizenPrefab;
         [Range(0,60)][SerializeField] float minSpawnTime = 2f;
         [Range(0,300)][SerializeField] float maxSpawnTime = 10f;
+        [SerializeField] bool spawn = true;
 
         void Start()
         {
@@ -16,7 +17,7 @@ namespace WorldEcon.World
 
         void SpawnCitizen()
         {
-            Instantiate(citizenPrefab, transform.position, Quaternion.identity);
+            if (spawn) Instantiate(citizenPrefab, transform.position, Quaternion.identity);
             Invoke("SpawnCitizen", UnityEngine.Random.Range(minSpawnTime, maxSpawnTime));
         }
     }

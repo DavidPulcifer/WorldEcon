@@ -11,6 +11,7 @@ TagManager:
   - Location3
   - Office
   - Toilet
+  - Puddle
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

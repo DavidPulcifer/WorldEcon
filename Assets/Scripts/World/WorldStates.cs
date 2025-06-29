@@ -19,6 +19,13 @@ namespace WorldEcon.World
             worldStates = new Dictionary<string, int>();
         }
 
+        public int GetStateValue(string key)
+        {
+            if (!HasWorldState(key)) return -1;
+
+            return worldStates[key];
+        }
+
         public bool HasWorldState(string key)
         {
             return worldStates.ContainsKey(key);

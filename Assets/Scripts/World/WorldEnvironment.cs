@@ -13,6 +13,7 @@ namespace WorldEcon.World
         static ResourceQueue resources;
         static ResourceQueue offices;
         static ResourceQueue toilets;
+        static ResourceQueue puddles;
         static Dictionary<string, ResourceQueue> allResources = new Dictionary<string, ResourceQueue>();
 
         static WorldEnvironment()
@@ -26,6 +27,8 @@ namespace WorldEcon.World
             allResources.Add("offices", offices);
             toilets = new ResourceQueue("Toilet", "FreeToilet", worldEnvironmentStates);
             allResources.Add("toilets", toilets);
+            puddles = new ResourceQueue("Puddle", "FreePuddle", worldEnvironmentStates);
+            allResources.Add("puddles", puddles);
 
             Time.timeScale = 5;
         }
