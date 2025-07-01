@@ -22,7 +22,7 @@ namespace WorldEcon.Entities
         bool invoked = false;
         Vector3 destination = Vector3.zero;
 
-        public void Start()
+        public void Awake()
         {
             AbstractAction[] assignedActions = GetComponents<AbstractAction>();
             foreach (AbstractAction action in assignedActions)

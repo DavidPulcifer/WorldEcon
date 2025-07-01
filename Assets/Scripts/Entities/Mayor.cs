@@ -4,9 +4,9 @@ namespace WorldEcon.Entities
 {
     public class Mayor : Person
     {
-        new void Start()
+        new void Awake()
         {
-            base.Start();
+            base.Awake();
             SubGoal s1 = new SubGoal("research", 1, false);
             goals.Add(s1, 1);
 

@@ -16,6 +16,13 @@ namespace WorldEcon.World.Resources
 
             return true;
         }
+
+        public void EndInteraction()
+        {
+            if (currentInteractions <= 0) return;
+
+            currentInteractions -= 1;
+        }
     }
 }
 

@@ -27,7 +27,7 @@ namespace WorldEcon.World
             puddles = new ResourceQueue("Puddle", "FreePuddle", worldEnvironmentStates);
             allResources.Add("puddles", puddles);
 
-            // Time.timeScale = 5;
+            Time.timeScale = 2;
         }
 
         public ResourceQueue GetResourceQueue(string type)

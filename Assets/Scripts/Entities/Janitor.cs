@@ -4,9 +4,9 @@ namespace WorldEcon.Entities
 {
     public class Janitor : Person
     {
-        new void Start()
+        new void Awake()
         {
-            base.Start();
+            base.Awake();
             SubGoal s1 = new SubGoal("cleanPuddle", 1, false);
             goals.Add(s1, 1);
 

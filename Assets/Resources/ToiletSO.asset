@@ -15,3 +15,5 @@ MonoBehaviour:
   resourceTag: Toilet
   resourceQueue: toilets
   resourceState: FreeToilet
+  isGatherable: 0
+  maxInteractions: 1

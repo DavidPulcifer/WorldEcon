@@ -4,9 +4,9 @@ namespace WorldEcon.Entities
 {
     public class Villager : Person
     {
-        new void Start()
+        new void Awake()
         {
-            base.Start();            
+            base.Awake();            
             SubGoal s1 = new SubGoal("rested", 1, false);
             goals.Add(s1, 3);
 
