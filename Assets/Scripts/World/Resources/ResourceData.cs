@@ -8,6 +8,8 @@ namespace WorldEcon.World.Resources
         public string resourceTag;
         public string resourceQueue;
         public string resourceState;
+        public bool isGatherable;
+        public int maxInteractions = 1;
     }
 }
 

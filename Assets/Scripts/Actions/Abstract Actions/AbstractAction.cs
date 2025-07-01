@@ -23,10 +23,12 @@ namespace WorldEcon.Actions
 
         // public WorldStates agentBeliefs;
 
-        public Inventory inventory;
-        public WorldStates beliefs;
+        // public Inventory inventory;
+        // public WorldStates beliefs;
 
         public bool running = false;
+
+        public Person AssignedPerson { get; private set; }
 
         public AbstractAction()
         {
@@ -37,6 +39,8 @@ namespace WorldEcon.Actions
         void Awake()
         {
             agent = gameObject.GetComponent<NavMeshAgent>();
+            AssignedPerson = gameObject.GetComponent<Person>();
+
             if (preconditions != null)
             {
                 foreach (WorldState worldState in preConditions)
@@ -53,8 +57,8 @@ namespace WorldEcon.Actions
                 }
             }
 
-            inventory = GetComponent<Person>().inventory;
-            beliefs = GetComponent<Person>().beliefs;
+            // inventory = person.inventory;
+            // beliefs = person.beliefs;
         }
 
         public bool CanDoAction()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using WorldEcon.Entities;
 using WorldEcon.World;
 
 namespace WorldEcon.Actions
@@ -7,19 +8,18 @@ namespace WorldEcon.Actions
     {
         public override bool PrePerform()
         {
-            target = WorldEnvironment.Instance.GetResourceQueue("toilets").RemoveResource();
+            target = GameObject.FindGameObjectWithTag("Toilet");
             if (target == null) return false;
-            inventory.AddItem(target);
-            WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("FreeToilet", -1);
+            AssignedPerson.inventory.AddItem(target);
             return true;
         }
 
         public override bool PostPerform()
         {
             WorldEnvironment.Instance.GetResourceQueue("toilets").AddResource(target);
-            inventory.RemoveItem(target);
+            AssignedPerson.inventory.RemoveItem(target);
             WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState("FreeToilet", 1);
-            beliefs.RemoveWorldState("busting");
+            AssignedPerson.beliefs.RemoveWorldState("busting");
             return true;
         }
     }

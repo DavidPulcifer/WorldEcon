@@ -11,7 +11,7 @@ namespace WorldEcon.Actions
 
         public override bool PostPerform()
         {            
-            beliefs.RemoveWorldState("exhausted");
+            AssignedPerson.beliefs.RemoveWorldState("exhausted");
             return true;
         }
     }

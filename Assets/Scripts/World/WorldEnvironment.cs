@@ -9,7 +9,6 @@ namespace WorldEcon.World
     {
         static readonly WorldEnvironment instance = new WorldEnvironment();
         static WorldStates worldEnvironmentStates;
-        static ResourceQueue citizens;
         static ResourceQueue resources;
         static ResourceQueue offices;
         static ResourceQueue toilets;
@@ -18,9 +17,7 @@ namespace WorldEcon.World
 
         static WorldEnvironment()
         {
-            worldEnvironmentStates = new WorldStates();
-            citizens = new ResourceQueue("", "", worldEnvironmentStates);
-            allResources.Add("citizens", citizens);
+            worldEnvironmentStates = new WorldStates();            
             resources = new ResourceQueue("Resource", "FreeResource", worldEnvironmentStates);
             allResources.Add("resources", resources);
             offices = new ResourceQueue("Office", "FreeOffice", worldEnvironmentStates);
