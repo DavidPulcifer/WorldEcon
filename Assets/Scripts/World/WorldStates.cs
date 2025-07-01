@@ -3,13 +3,6 @@ using UnityEngine;
 
 namespace WorldEcon.World
 {
-    [System.Serializable]
-    public class WorldState
-    {
-        public string key;
-        public int value;
-    }
-
     public class WorldStates
     {
         public Dictionary<string, int> worldStates;
