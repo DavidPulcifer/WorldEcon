@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8723736834066102987}
   - component: {fileID: 5544201364890303286}
   - component: {fileID: 8282459973637515336}
+  - component: {fileID: 556688230398425257}
   m_Layer: 0
   m_Name: Villager
   m_TagString: Untagged
@@ -129,7 +130,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -151,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Rest
   cost: 1
+  resourceData: {fileID: 11400000, guid: 99f55b3d40f0d7d4ba30297130bbc2bd, type: 2}
   target: {fileID: 0}
   targetTag: 
   duration: 5
@@ -176,12 +178,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Go To Toilet
   cost: 1
+  resourceData: {fileID: 11400000, guid: 895d151580ecc8140b2d6690fa916841, type: 2}
   target: {fileID: 0}
   targetTag: 
   duration: 5
   preConditions:
-  - key: FreeToilet
-    value: 0
   - key: busting
     value: 0
   afterEffects:
@@ -216,3 +217,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPerson: {fileID: 5544201364890303286}
+--- !u!114 &556688230398425257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175886556862998399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c413b229be2929042908aeab62d9beb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Eat Food
+  cost: 1
+  resourceData: {fileID: 11400000, guid: c1741779221022244ba6d77b1043a45f, type: 2}
+  target: {fileID: 0}
+  targetTag: 
+  duration: 5
+  preConditions:
+  - key: hungry
+    value: 1
+  afterEffects:
+  - key: fed
+    value: 1
+  agent: {fileID: 0}
+  running: 0

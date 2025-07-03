@@ -8,25 +8,12 @@ namespace WorldEcon.World
     public sealed class WorldEnvironment
     {
         static readonly WorldEnvironment instance = new WorldEnvironment();
-        static WorldStates worldEnvironmentStates;
-        static ResourceQueue resources;
-        static ResourceQueue offices;
-        static ResourceQueue toilets;
-        static ResourceQueue puddles;
+        static WorldStates worldEnvironmentStates;        
         static Dictionary<string, ResourceQueue> allResources = new Dictionary<string, ResourceQueue>();
 
         static WorldEnvironment()
         {
-            worldEnvironmentStates = new WorldStates();            
-            resources = new ResourceQueue("Resource", "FreeResource", worldEnvironmentStates);
-            allResources.Add("resources", resources);
-            offices = new ResourceQueue("Office", "FreeOffice", worldEnvironmentStates);
-            allResources.Add("offices", offices);
-            toilets = new ResourceQueue("Toilet", "FreeToilet", worldEnvironmentStates);
-            allResources.Add("toilets", toilets);
-            puddles = new ResourceQueue("Puddle", "FreePuddle", worldEnvironmentStates);
-            allResources.Add("puddles", puddles);
-
+            worldEnvironmentStates = new WorldStates();
             Time.timeScale = 2;
         }
 

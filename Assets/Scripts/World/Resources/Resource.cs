@@ -19,6 +19,12 @@ namespace WorldEcon.World.Resources
 
         public void EndInteraction()
         {
+            if (ResourceData.isGatherable)
+            {
+                Destroy(gameObject, 1f);
+                return;
+            }
+            
             if (currentInteractions <= 0) return;
 
             currentInteractions -= 1;

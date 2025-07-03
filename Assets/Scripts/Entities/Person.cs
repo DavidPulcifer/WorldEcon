@@ -21,6 +21,7 @@ namespace WorldEcon.Entities
         SubGoal currentGoal;
         bool invoked = false;
         Vector3 destination = Vector3.zero;
+        Vector3 exit = Vector3.zero;
 
         public void Awake()
         {
@@ -35,11 +36,13 @@ namespace WorldEcon.Entities
         {
             currentAction.running = false;
             currentAction.PostPerform();
+            currentAction.agent.SetDestination(exit);
             invoked = false;
         }
 
         void LateUpdate()
         {
+            //Person has an action and the action is in progress
             if (currentAction != null && currentAction.running)
             {
                 float distanceToTarget = Vector3.Distance(destination, transform.position);
@@ -54,6 +57,7 @@ namespace WorldEcon.Entities
                 return;
             }
 
+            //Initialize the Planner and Action Queue if either don't exist.
             if (planner == null || actionQueue == null)
             {
                 planner = new EntityPlanner();
@@ -69,6 +73,7 @@ namespace WorldEcon.Entities
                 }
             }
 
+            //The action queue exists, but there are not actions in it.
             if (actionQueue != null && actionQueue.Count == 0)
             {
                 if (currentGoal.Remove)
@@ -78,6 +83,7 @@ namespace WorldEcon.Entities
                 planner = null;
             }
 
+            //The action queue exists and there are actions in it.
             if (actionQueue != null && actionQueue.Count > 0)
             {
                 currentAction = actionQueue.Dequeue();
@@ -90,8 +96,11 @@ namespace WorldEcon.Entities
                         currentAction.running = true;
 
                         destination = currentAction.target.transform.position;
+                        exit = destination + new Vector3(4, 0, 0);
                         Transform destinationObject = currentAction.target.transform.Find("Destination");
                         if (destinationObject != null) destination = destinationObject.position;
+                        Transform exitObject = currentAction.target.transform.Find("Exit");
+                        if (exitObject != null) exit = exitObject.position;
 
                         currentAction.agent.SetDestination(destination);
                     }

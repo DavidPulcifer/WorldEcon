@@ -6,20 +6,20 @@ namespace WorldEcon.Actions
 {
     public class GoToToiletAction : AbstractAction
     {        
-        GameObject[] toilets;
-        Resource toiletResource;
+        GameObject[] resourceObjects;
+        Resource resource;
 
         public override bool PrePerform()
         {
-            toilets = GameObject.FindGameObjectsWithTag("Toilet");
-            if (toilets.Length == 0 || toilets == null) return false;
-            foreach (GameObject toilet in toilets)
+            resourceObjects = GameObject.FindGameObjectsWithTag(resourceData.resourceTag);
+            if (resourceObjects.Length == 0 || resourceObjects == null) return false;
+            foreach (GameObject resourceObject in resourceObjects)
             {
-                toiletResource = toilet.GetComponent<Resource>();
-                if (toiletResource == null) continue;
-                if (toiletResource.Interact())
+                resource = resourceObject.GetComponent<Resource>();
+                if (resource == null) continue;
+                if (resource.Interact())
                 {
-                    target = toilet;
+                    target = resourceObject;
                     break;
                 }
             }

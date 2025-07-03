@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using WorldEcon.Actions;
 using WorldEcon.World;
@@ -46,10 +45,10 @@ namespace WorldEcon.Planning
             {
                 actionQueue.Enqueue(action);
             }
-            // Debug.Log("The plan is: ");
+            Debug.Log("The plan is: ");
             foreach (AbstractAction loggedAction in actionQueue)
             {
-                // Debug.Log("Q: " + loggedAction.actionName);
+                Debug.Log("Q: " + loggedAction.actionName);
             }
 
             return actionQueue;

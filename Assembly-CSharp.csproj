@@ -55,9 +55,9 @@
     <Compile Include="Assets\Scripts\World\CitizenSpawner.cs" />
     <Compile Include="Assets\Scripts\World\WorldEnvironment.cs" />
     <Compile Include="Assets\Scripts\World\Resources\Resource.cs" />
-    <Compile Include="Assets\Scripts\Actions\Abstract Actions\GoToSecondBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Planning\Node.cs" />
     <Compile Include="Assets\Scripts\GUI\PersonVisual.cs" />
+    <Compile Include="Assets\Scripts\Actions\Abstract Actions\EatFood.cs" />
     <Compile Include="Assets\Scripts\World\WorldState.cs" />
     <Compile Include="Assets\Scripts\Actions\Abstract Actions\RestAction.cs" />
     <Compile Include="Assets\Scripts\World\Resources\ResourceQueue.cs" />
@@ -78,7 +78,6 @@
     <Compile Include="Assets\Scripts\Actions\Abstract Actions\AbstractAction.cs" />
     <Compile Include="Assets\Scripts\Controls\UserControls.cs" />
     <Compile Include="Assets\Scripts\Actions\Requirements\AbstractRequirement.cs" />
-    <Compile Include="Assets\Scripts\Actions\Abstract Actions\GoToBuildingAction.cs" />
     <Compile Include="Assets\Scripts\Entities\Inventory.cs" />
   </ItemGroup>
   <ItemGroup>

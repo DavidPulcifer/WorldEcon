@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using WorldEcon.Entities;
 using WorldEcon.World;
+using WorldEcon.World.Resources;
 
 namespace WorldEcon.Actions
 {
@@ -11,6 +12,7 @@ namespace WorldEcon.Actions
     {
         public string actionName = "Action";
         public float cost = 1.0f;
+        public ResourceData resourceData;
         public GameObject target;
         public string targetTag;
         public float duration = 0;

@@ -52,15 +52,11 @@ namespace WorldEcon.Controls
             else if (IsMouseReleased())
             {
                 if (deleteResource)
-                {
-                    WorldEnvironment.Instance.GetResourceQueue(focusObjectData.resourceQueue).RemoveResource(focusObj);
-                    WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState(focusObjectData.resourceState, -1);
+                {                    
                     Destroy(focusObj);
                 }
                 else
-                {
-                    WorldEnvironment.Instance.GetResourceQueue(focusObjectData.resourceQueue).AddResource(focusObj);
-                    WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState(focusObjectData.resourceState, 1);
+                {                    
                     focusObj.GetComponent<Collider>().enabled = true;
                 }
 
