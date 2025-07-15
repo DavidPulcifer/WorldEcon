@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 2494977726738434911}
   - component: {fileID: 5441373652024055261}
   - component: {fileID: 8723736834066102987}
+  - component: {fileID: 556688230398425257}
+  - component: {fileID: 4969936250798204782}
   - component: {fileID: 5544201364890303286}
   - component: {fileID: 8282459973637515336}
-  - component: {fileID: 556688230398425257}
   m_Layer: 0
   m_Name: Villager
   m_TagString: Untagged
@@ -190,6 +191,58 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
+--- !u!114 &556688230398425257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175886556862998399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c413b229be2929042908aeab62d9beb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Eat Food
+  cost: 1
+  resourceData: {fileID: 0}
+  target: {fileID: 0}
+  targetTag: Food
+  duration: 5
+  preConditions:
+  - key: hungry
+    value: 1
+  - key: hasFood
+    value: 1
+  afterEffects:
+  - key: fed
+    value: 1
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &4969936250798204782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175886556862998399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d7320bb03f54f46a0fa7e44f1e878f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Gather Food
+  cost: 1
+  resourceData: {fileID: 11400000, guid: c1741779221022244ba6d77b1043a45f, type: 2}
+  target: {fileID: 0}
+  targetTag: 
+  duration: 1
+  preConditions: []
+  afterEffects:
+  - key: secure
+    value: 0
+  agent: {fileID: 0}
+  running: 0
 --- !u!114 &5544201364890303286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,29 +270,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPerson: {fileID: 5544201364890303286}
---- !u!114 &556688230398425257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7175886556862998399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c413b229be2929042908aeab62d9beb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Eat Food
-  cost: 1
-  resourceData: {fileID: 11400000, guid: c1741779221022244ba6d77b1043a45f, type: 2}
-  target: {fileID: 0}
-  targetTag: 
-  duration: 5
-  preConditions:
-  - key: hungry
-    value: 1
-  afterEffects:
-  - key: fed
-    value: 1
-  agent: {fileID: 0}
-  running: 0

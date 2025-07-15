@@ -57,13 +57,13 @@
     <Compile Include="Assets\Scripts\World\Resources\Resource.cs" />
     <Compile Include="Assets\Scripts\Planning\Node.cs" />
     <Compile Include="Assets\Scripts\GUI\PersonVisual.cs" />
-    <Compile Include="Assets\Scripts\Actions\Abstract Actions\EatFood.cs" />
     <Compile Include="Assets\Scripts\World\WorldState.cs" />
     <Compile Include="Assets\Scripts\Actions\Abstract Actions\RestAction.cs" />
     <Compile Include="Assets\Scripts\World\Resources\ResourceQueue.cs" />
     <Compile Include="Assets\Scripts\Entities\Doctor.cs" />
     <Compile Include="Assets\Scripts\GUI\PersonEditor.cs" />
     <Compile Include="Assets\Scripts\Entities\Janitor.cs" />
+    <Compile Include="Assets\Scripts\Actions\Abstract Actions\GatherFoodAction.cs" />
     <Compile Include="Assets\Scripts\Controls\PointToMove.cs" />
     <Compile Include="Assets\Scripts\Entities\Mayor.cs" />
     <Compile Include="Assets\Scripts\World\Resources\ResourceData.cs" />
@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\World\StateMonitor.cs" />
     <Compile Include="Assets\Scripts\Actions\Abstract Actions\GoToToiletAction.cs" />
     <Compile Include="Assets\Scripts\Entities\Person.cs" />
+    <Compile Include="Assets\Scripts\Actions\Abstract Actions\EatFoodAction.cs" />
     <Compile Include="Assets\Scripts\Entities\Citizen.cs" />
     <Compile Include="Assets\Scripts\Planning\EntityPlanner.cs" />
     <Compile Include="Assets\Scripts\Actions\ActionScriptableObj.cs" />

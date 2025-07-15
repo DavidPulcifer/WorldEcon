@@ -48,7 +48,7 @@ public class PersonEditor : Editor
         }
 
         GUILayout.Label("Inventory: ");
-        foreach (GameObject item in person.gameObject.GetComponent<Person>().inventory.GetItems())
+        foreach (GameObject item in person.gameObject.GetComponent<Person>().inventory.GetExternalInventoryObjects())
         {
             GUILayout.Label("====  " + item.tag);
         }
