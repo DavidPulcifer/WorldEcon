@@ -30,13 +30,14 @@ namespace WorldEcon.World
             else if (HasWorldState(key))
             {
                 worldStates[key] += increment;
-                if (worldStates[key] <= 0) RemoveWorldState(key);
+                if (worldStates[key] <= 0) RemoveState(key);
             }
         }
 
-        public void RemoveWorldState(string key)
+        public void RemoveState(string key)
         {
             if (HasWorldState(key)) worldStates.Remove(key);
+            // if (!HasWorldState(key)) Debug.Log($"{key} not found in states.");
         }
 
         public void SetWorldState(string key, int value)
@@ -45,7 +46,7 @@ namespace WorldEcon.World
             else AddState(key, value);
         }
 
-        public Dictionary<string, int> GetWorldStates()
+        public Dictionary<string, int> GetStates()
         {
             return worldStates;
         }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using WorldEcon.World;
 using WorldEcon.World.Resources;
 
 namespace WorldEcon.Actions
@@ -34,7 +33,8 @@ namespace WorldEcon.Actions
             target.GetComponent<Resource>().EndInteraction();
             AssignedPerson.inventory.RemoveItem(target);
             target = null;
-            AssignedPerson.beliefs.RemoveWorldState("busting");
+            AssignedPerson.beliefs.RemoveState("busting");
+            AssignedPerson.ResetRelief();
             return true;
         }
     }

@@ -7,23 +7,20 @@ namespace WorldEcon.Planning
 {
     public class EntityPlanner
     {
-        public Queue<AbstractAction> Plan(List<AbstractAction> actions, Dictionary<string, int> goals, WorldStates beliefStates)
+        public Queue<AbstractAction> Plan(List<AbstractAction> actions, Dictionary<string, int> goal, WorldStates beliefStates)
         {
-            List<AbstractAction> usableActions = new List<AbstractAction>();
+            List<AbstractAction> availableActions = new List<AbstractAction>();
             foreach (AbstractAction action in actions)
             {
-                if (action.CanDoAction()) usableActions.Add(action);
+                if (action.CanDoAction()) availableActions.Add(action);
             }
 
             List<Node> leaves = new List<Node>();
-            Node start = new Node(null, 0, WorldEnvironment.Instance.GetWorldEnvironment().GetWorldStates(), beliefStates.GetWorldStates(), null);
+            Node start = new Node(null, 0, WorldEnvironment.Instance.GetWorldEnvironment().GetStates(), beliefStates.GetStates(), null);
 
-            bool success = BuildGraph(start, leaves, usableActions, goals);
+            bool success = BuildGraph(start, leaves, availableActions, goal);
 
-            if (!success)
-            {                
-                return null;
-            }
+            if (!success) return null;
 
             Node cheapest = null;
             foreach (Node leaf in leaves)
@@ -32,53 +29,53 @@ namespace WorldEcon.Planning
                 else if (leaf.cost < cheapest.cost) cheapest = leaf;
             }
 
-            List<AbstractAction> results = new List<AbstractAction>();
+            List<AbstractAction> actionSequence = new List<AbstractAction>();
             Node n = cheapest;
             while (n != null)
             {
-                if (n.action != null) results.Insert(0, n.action);
+                if (n.action != null) actionSequence.Insert(0, n.action);
                 n = n.parent;
             }
 
             Queue<AbstractAction> actionQueue = new Queue<AbstractAction>();
-            foreach (AbstractAction action in results)
+            foreach (AbstractAction action in actionSequence)
             {
                 actionQueue.Enqueue(action);
             }
-            Debug.Log("The plan is: ");
+            // Debug.Log("The plan is: ");
             foreach (AbstractAction loggedAction in actionQueue)
             {
-                Debug.Log("Q: " + loggedAction.actionName);
+                // Debug.Log("Q: " + loggedAction.actionName);
             }
 
             return actionQueue;
         }
 
-        bool BuildGraph(Node parent, List<Node> leaves, List<AbstractAction> usableActions, Dictionary<string, int> goals)
+        bool BuildGraph(Node parent, List<Node> leaves, List<AbstractAction> availableActions, Dictionary<string, int> goal)
         {
             bool foundPath = false;
 
-            foreach (AbstractAction action in usableActions)
+            foreach (AbstractAction action in availableActions)
             {
                 if (action.CanDoAction(parent.states))
                 {
-                    Dictionary<string, int> currentState = new Dictionary<string, int>(parent.states);
+                    Dictionary<string, int> currentStates = new Dictionary<string, int>(parent.states);
                     foreach (KeyValuePair<string, int> effect in action.effects)
                     {
-                        if (!currentState.ContainsKey(effect.Key)) currentState.Add(effect.Key, effect.Value);
+                        if (!currentStates.ContainsKey(effect.Key)) currentStates.Add(effect.Key, effect.Value);
                     }
 
-                    Node node = new Node(parent, parent.cost + action.cost, currentState, action);
+                    Node node = new Node(parent, parent.cost + action.cost, currentStates, action);
 
-                    if (GoalAchieved(goals, currentState))
+                    if (GoalAchieved(goal, currentStates))
                     {
                         leaves.Add(node);
                         foundPath = true;
                     }
                     else
                     {
-                        List<AbstractAction> subset = ActionSubset(usableActions, action);
-                        bool found = BuildGraph(node, leaves, subset, goals);
+                        List<AbstractAction> subset = ActionSubset(availableActions, action);
+                        bool found = BuildGraph(node, leaves, subset, goal);
                         if (found) foundPath = true;
                     }
                 }

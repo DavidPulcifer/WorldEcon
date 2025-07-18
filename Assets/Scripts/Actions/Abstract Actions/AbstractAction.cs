@@ -16,6 +16,7 @@ namespace WorldEcon.Actions
         public GameObject target;
         public string targetTag;
         public float duration = 0;
+        // public bool 
         public WorldState[] preConditions;
         public WorldState[] afterEffects;
         public NavMeshAgent agent;
@@ -45,17 +46,17 @@ namespace WorldEcon.Actions
 
             if (preconditions != null)
             {
-                foreach (WorldState worldState in preConditions)
+                foreach (WorldState preCondition in preConditions)
                 {
-                    preconditions.Add(worldState.key, worldState.value);
+                    preconditions.Add(preCondition.key, preCondition.value);
                 }
             }
 
             if (afterEffects != null)
             {
-                foreach (WorldState worldState in afterEffects)
+                foreach (WorldState afterEffect in afterEffects)
                 {
-                    effects.Add(worldState.key, worldState.value);
+                    effects.Add(afterEffect.key, afterEffect.value);
                 }
             }
 

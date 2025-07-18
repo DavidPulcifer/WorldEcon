@@ -155,7 +155,7 @@ MonoBehaviour:
   cost: 1
   resourceData: {fileID: 11400000, guid: 99f55b3d40f0d7d4ba30297130bbc2bd, type: 2}
   target: {fileID: 0}
-  targetTag: 
+  targetTag: Bed
   duration: 5
   preConditions:
   - key: exhausted

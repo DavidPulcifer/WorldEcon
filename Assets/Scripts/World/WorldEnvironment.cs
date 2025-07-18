@@ -14,7 +14,7 @@ namespace WorldEcon.World
         static WorldEnvironment()
         {
             worldEnvironmentStates = new WorldStates();
-            Time.timeScale = 2;
+            Time.timeScale = 5;
         }
 
         public ResourceQueue GetResourceQueue(string type)

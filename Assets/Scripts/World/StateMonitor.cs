@@ -43,7 +43,7 @@ namespace WorldEcon.World
                     GameObject spawnedPrefab = Instantiate(resourcePrefab, location, resourcePrefab.transform.rotation);
                     stateFound = false;
                     stateStatus = initialStateStatus;
-                    beliefs.RemoveWorldState(state);
+                    beliefs.RemoveState(state);
                     WorldEnvironment.Instance.GetResourceQueue(queueName).AddResource(spawnedPrefab);
                     WorldEnvironment.Instance.GetWorldEnvironment().ModifyWorldState(worldState, 1);
                 }

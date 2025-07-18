@@ -10,7 +10,7 @@ namespace WorldEcon.Actions
 
         public override bool PrePerform()
         {
-            resourceObjects = GameObject.FindGameObjectsWithTag("Bed");
+            resourceObjects = GameObject.FindGameObjectsWithTag(targetTag);
             if (resourceObjects.Length == 0 || resourceObjects == null) return false;
             foreach (GameObject resourceObject in resourceObjects)
             {
@@ -33,7 +33,8 @@ namespace WorldEcon.Actions
             target.GetComponent<Resource>().EndInteraction();
             AssignedPerson.inventory.RemoveItem(target);
             target = null;
-            AssignedPerson.beliefs.RemoveWorldState("exhausted");
+            AssignedPerson.beliefs.RemoveState("exhausted");
+            AssignedPerson.ResetRested();
             return true;
         }
     }
