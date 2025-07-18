@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\World\WorldState.cs" />
     <Compile Include="Assets\Scripts\Actions\Abstract Actions\RestAction.cs" />
     <Compile Include="Assets\Scripts\World\Resources\ResourceQueue.cs" />
+    <Compile Include="Assets\Scripts\Entities\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Entities\Doctor.cs" />
     <Compile Include="Assets\Scripts\GUI\PersonEditor.cs" />
     <Compile Include="Assets\Scripts\Entities\Janitor.cs" />

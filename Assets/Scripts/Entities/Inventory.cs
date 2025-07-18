@@ -29,6 +29,19 @@ namespace WorldEcon.Entities
             return heldInventoryItems.ContainsKey(resourceData);
         }
 
+        public bool MeetsInventoryRequirements(InventoryItem[] inventoryItems)
+        {
+            if (inventoryItems == null) return true;
+            
+            foreach (InventoryItem inventoryItem in inventoryItems)
+            {
+                if (!heldInventoryItems.ContainsKey(inventoryItem.resourceData)) return false;
+
+                if (heldInventoryItems[inventoryItem.resourceData] < inventoryItem.quantity) return false;
+            }
+            return true;
+        }
+
         public void AddItem(GameObject item)
         {
             externalInventoryItems.Add(item);

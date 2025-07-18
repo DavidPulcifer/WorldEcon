@@ -16,7 +16,7 @@ namespace WorldEcon.Actions
         public GameObject target;
         public string targetTag;
         public float duration = 0;
-        // public bool 
+        public InventoryItem[] inventoryRequired;
         public WorldState[] preConditions;
         public WorldState[] afterEffects;
         public NavMeshAgent agent;

@@ -157,6 +157,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: Bed
   duration: 5
+  inventoryRequired: []
   preConditions:
   - key: exhausted
     value: 0
@@ -183,6 +184,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: 
   duration: 5
+  inventoryRequired: []
   preConditions:
   - key: busting
     value: 0
@@ -209,6 +211,9 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: Food
   duration: 5
+  inventoryRequired:
+  - resourceData: {fileID: 11400000, guid: c1741779221022244ba6d77b1043a45f, type: 2}
+    quantity: 1
   preConditions:
   - key: hungry
     value: 1
@@ -237,6 +242,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: 
   duration: 1
+  inventoryRequired: []
   preConditions: []
   afterEffects:
   - key: secure

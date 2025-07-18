@@ -143,7 +143,7 @@ namespace WorldEcon.Entities
                     if (currentAction.target == null && currentAction.targetTag != "") currentAction.target = GameObject.FindWithTag(currentAction.targetTag);
 
                     //TODO: Fix this section so it can detect when the goal needs a held inventory item instead of a gameobject.
-                    if (currentAction.target != null)
+                    if (currentAction.target != null && inventory.MeetsInventoryRequirements(currentAction.inventoryRequired))
                     {
                         currentAction.running = true;
 
@@ -155,6 +155,10 @@ namespace WorldEcon.Entities
                         if (exitObject != null) exit = exitObject.position;
 
                         currentAction.agent.SetDestination(destination);
+                    }
+                    else if (inventory.MeetsInventoryRequirements(currentAction.inventoryRequired))
+                    {                        
+                        currentAction.running = true;
                     }
                 }
                 else
