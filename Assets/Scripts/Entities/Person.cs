@@ -26,6 +26,7 @@ namespace WorldEcon.Entities
         SubGoal s1 = new SubGoal("rested", 1, false);
         SubGoal s2 = new SubGoal("relief", 1, false);
         SubGoal s3 = new SubGoal("fed", 1, false);
+        SubGoal s4 = new SubGoal("secure", 1, false);
 
         public void Awake()
         {
@@ -38,13 +39,31 @@ namespace WorldEcon.Entities
             goals.Add(s1, 1);
             goals.Add(s2, 1);
             goals.Add(s3, 1);
-
-            SubGoal s4 = new SubGoal("secure", 1, false);
             goals.Add(s4, 3);
 
             Invoke("GetTired", Random.Range(40, 60));
             Invoke("NeedRelief", Random.Range(20, 30));
             Invoke("GetHungry", Random.Range(30, 40));
+            Invoke("SearchForFood", 30);
+        }
+
+        void SearchForFood()
+        {            
+            if (!beliefs.HasWorldState("hungry"))
+            {
+                Invoke("SearchForFood", 30);
+                return;
+            }
+
+            if (GameObject.FindGameObjectWithTag("Food") != null)
+            {
+                beliefs.SetWorldState("seeFood", 1);
+            }
+            else if (beliefs.HasWorldState("seeFood"))
+            {
+                beliefs.RemoveState("seeFood");
+            }
+            Invoke("SearchForFood", 30);
         }
 
         void GetTired()
@@ -142,22 +161,23 @@ namespace WorldEcon.Entities
                 {
                     if (currentAction.target == null && currentAction.targetTag != "") currentAction.target = GameObject.FindWithTag(currentAction.targetTag);
 
-                    //TODO: Fix this section so it can detect when the goal needs a held inventory item instead of a gameobject.
                     if (currentAction.target != null && inventory.MeetsInventoryRequirements(currentAction.inventoryRequired))
                     {
                         currentAction.running = true;
 
                         destination = currentAction.target.transform.position;
-                        exit = destination + new Vector3(4, 0, 0);
+                        Vector3 randomOffset = new Vector3(0, 0, Random.Range(-8, 8));
+                        exit = destination + new Vector3(4, 0, 0) + randomOffset;
                         Transform destinationObject = currentAction.target.transform.Find("Destination");
-                        if (destinationObject != null) destination = destinationObject.position;
+                        if (destinationObject != null) destination = destinationObject.position + randomOffset;
                         Transform exitObject = currentAction.target.transform.Find("Exit");
-                        if (exitObject != null) exit = exitObject.position;
+                        if (exitObject != null) exit = exitObject.position + randomOffset;
 
                         currentAction.agent.SetDestination(destination);
                     }
                     else if (inventory.MeetsInventoryRequirements(currentAction.inventoryRequired))
-                    {                        
+                    {
+                        destination = transform.position;
                         currentAction.running = true;
                     }
                 }

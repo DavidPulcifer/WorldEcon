@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Entities\Citizen.cs" />
     <Compile Include="Assets\Scripts\Planning\EntityPlanner.cs" />
     <Compile Include="Assets\Scripts\Actions\ActionScriptableObj.cs" />
+    <Compile Include="Assets\Scripts\Actions\Abstract Actions\GrowFoodAction.cs" />
     <Compile Include="Assets\Scripts\Actions\Abstract Actions\AbstractAction.cs" />
     <Compile Include="Assets\Scripts\Controls\UserControls.cs" />
     <Compile Include="Assets\Scripts\Actions\Requirements\AbstractRequirement.cs" />

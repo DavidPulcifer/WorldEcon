@@ -8,6 +8,9 @@ TagManager:
   - Toilet
   - Bed
   - Food
+  - Resource
+  - Office
+  - Farm
   layers:
   - Default
   - TransparentFX

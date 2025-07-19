@@ -101,7 +101,7 @@ namespace WorldEcon.Entities
                 return;
             }
 
-            heldInventoryItems[resourceData] -= 1;
+            heldInventoryItems[resourceData] -= number;
 
             if (heldInventoryItems[resourceData] <= 0) heldInventoryItems.Remove(resourceData);
         }

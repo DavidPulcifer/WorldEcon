@@ -22,11 +22,11 @@ namespace WorldEcon.Actions
         }
 
         public override bool PostPerform()
-        {            
+        {
             if (foodToEat == null) return false;
             AssignedPerson.inventory.RemoveItem(foodToEat, 1);            
             AssignedPerson.beliefs.RemoveState("hungry");
-            AssignedPerson.beliefs.RemoveState("hasFood");
+            if(!AssignedPerson.inventory.GetHeldInventory().ContainsKey(foodToEat)) AssignedPerson.beliefs.RemoveState("hasFood");
             AssignedPerson.ResetHungry();
             return true;
         }        

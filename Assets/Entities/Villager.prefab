@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8723736834066102987}
   - component: {fileID: 556688230398425257}
   - component: {fileID: 4969936250798204782}
+  - component: {fileID: 2317142606137710264}
   - component: {fileID: 5544201364890303286}
   - component: {fileID: 8282459973637515336}
   m_Layer: 0
@@ -243,10 +244,37 @@ MonoBehaviour:
   targetTag: 
   duration: 1
   inventoryRequired: []
+  preConditions:
+  - key: seeFood
+    value: 1
+  afterEffects:
+  - key: secure
+    value: 1
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &2317142606137710264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175886556862998399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39967c2a83c66d4981500854a5f276a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Grow Food
+  cost: 5
+  resourceData: {fileID: 11400000, guid: d07ccdc1f8f4f2646b9e083dc1e7825d, type: 2}
+  target: {fileID: 0}
+  targetTag: 
+  duration: 10
+  inventoryRequired: []
   preConditions: []
   afterEffects:
   - key: secure
-    value: 0
+    value: 1
   agent: {fileID: 0}
   running: 0
 --- !u!114 &5544201364890303286

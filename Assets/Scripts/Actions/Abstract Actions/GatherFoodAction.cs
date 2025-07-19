@@ -30,7 +30,7 @@ namespace WorldEcon.Actions
         {
             if (target == null) return false;
             AssignedPerson.inventory.AddItem(target.GetComponent<Resource>().ResourceData, 1);
-            AssignedPerson.beliefs.ModifyWorldState("hasFood", 1);
+            AssignedPerson.beliefs.SetWorldState("hasFood", 1);
             target.GetComponent<Resource>().EndInteraction();            
             return true;
         }        
