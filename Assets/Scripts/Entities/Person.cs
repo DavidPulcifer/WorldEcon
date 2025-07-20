@@ -36,6 +36,7 @@ namespace WorldEcon.Entities
         SubGoal reliefGoal = new SubGoal("relief", 1, false);
         SubGoal fedGoal = new SubGoal("fed", 1, false);
         SubGoal secureGoal = new SubGoal("secure", 1, false);
+        SubGoal testGoal = new SubGoal("test", 1, false);
 
         public void Awake()
         {
@@ -49,6 +50,7 @@ namespace WorldEcon.Entities
             goals.Add(reliefGoal, 1);
             goals.Add(fedGoal, 1);
             goals.Add(secureGoal, 3);
+            // goals.Add(testGoal, 5);
 
             Invoke("GetTired", Random.Range(getTiredMin, getTiredMax));
             Invoke("NeedRelief", Random.Range(needReliefMin, needReliefMax));
@@ -116,7 +118,7 @@ namespace WorldEcon.Entities
 
         void CompleteAction()
         {
-            livingWell += currentAction.livingWellReward;
+            livingWell += currentAction.GetRawLivingWellReward();
             currentAction.running = false;            
             currentAction.PostPerform();
             currentAction.agent.SetDestination(exit);

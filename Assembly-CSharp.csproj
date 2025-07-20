@@ -51,6 +51,7 @@
     <Compile Include="Assets\Scripts\World\WorldStates.cs" />
     <Compile Include="Assets\Scripts\Entities\Villager.cs" />
     <Compile Include="Assets\Scripts\Entities\SubGoal.cs" />
+    <Compile Include="Assets\Scripts\Actions\Abstract Actions\WaitAction.cs" />
     <Compile Include="Assets\Scripts\Actions\Abstract Actions\GoHomeAction.cs" />
     <Compile Include="Assets\Scripts\World\CitizenSpawner.cs" />
     <Compile Include="Assets\Scripts\World\WorldEnvironment.cs" />

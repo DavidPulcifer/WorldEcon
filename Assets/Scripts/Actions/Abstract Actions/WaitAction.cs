@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WorldEcon.Actions
 {
-    public class GoHomeAction : AbstractAction
+    public class WaitAction : AbstractAction
     {
         public override bool PrePerform()
         {
@@ -10,8 +10,7 @@ namespace WorldEcon.Actions
         }
 
         public override bool PostPerform()
-        {
-            Destroy(gameObject, 1);
+        {            
             return true;
         }
 

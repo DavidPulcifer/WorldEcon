@@ -16,21 +16,21 @@ namespace WorldEcon.Planning
             }
 
             List<Node> leaves = new List<Node>();
-            Node start = new Node(null, 0, WorldEnvironment.Instance.GetWorldEnvironment().GetStates(), beliefStates.GetStates(), null);
+            Node start = new Node(null, 0, 0, WorldEnvironment.Instance.GetWorldEnvironment().GetStates(), beliefStates.GetStates(), null);
 
             bool success = BuildGraph(start, leaves, availableActions, goal);
 
             if (!success) return null;
 
-            Node cheapest = null;
+            Node bestPlan = null;
             foreach (Node leaf in leaves)
             {
-                if (cheapest == null) cheapest = leaf;
-                else if (leaf.cost < cheapest.cost) cheapest = leaf;
+                if (bestPlan == null) bestPlan = leaf;
+                else if (leaf.cost/leaf.livingWellReward < bestPlan.cost/bestPlan.livingWellReward) bestPlan = leaf;
             }
 
             List<AbstractAction> actionSequence = new List<AbstractAction>();
-            Node n = cheapest;
+            Node n = bestPlan;
             while (n != null)
             {
                 if (n.action != null) actionSequence.Insert(0, n.action);
@@ -65,7 +65,7 @@ namespace WorldEcon.Planning
                         if (!currentStates.ContainsKey(effect.Key)) currentStates.Add(effect.Key, effect.Value);
                     }
 
-                    Node node = new Node(parent, parent.cost + action.cost, currentStates, action);
+                    Node node = new Node(parent, parent.cost + action.GetCost(), parent.livingWellReward + action.GetLivingWellReward(), currentStates, action);
 
                     if (GoalAchieved(goal, currentStates))
                     {

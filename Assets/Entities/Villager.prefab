@@ -158,6 +158,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: Bed
   duration: 5
+  livingWellReward: 2
   inventoryRequired: []
   preConditions:
   - key: exhausted
@@ -185,6 +186,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: 
   duration: 5
+  livingWellReward: 2
   inventoryRequired: []
   preConditions:
   - key: busting
@@ -212,6 +214,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: Food
   duration: 5
+  livingWellReward: 2
   inventoryRequired:
   - resourceData: {fileID: 11400000, guid: c1741779221022244ba6d77b1043a45f, type: 2}
     quantity: 1
@@ -243,6 +246,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: 
   duration: 1
+  livingWellReward: 2
   inventoryRequired: []
   preConditions:
   - key: seeFood
@@ -270,6 +274,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: 
   duration: 10
+  livingWellReward: 2
   inventoryRequired: []
   preConditions: []
   afterEffects:
@@ -289,6 +294,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a568ebfea2f56f458f5bc8b636e022f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getTiredMin: 500
+  getTiredMax: 600
+  needReliefMin: 200
+  needReliefMax: 300
+  needFoodMin: 150
+  needFoodMax: 200
+  searchForFoodTime: 60
   actions: []
   currentAction: {fileID: 0}
 --- !u!114 &8282459973637515336

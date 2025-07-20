@@ -36,6 +36,16 @@ namespace WorldEcon.Actions
             AssignedPerson.beliefs.RemoveState("busting");
             AssignedPerson.ResetRelief();
             return true;
-        }        
+        }
+
+        public override float GetCost()
+        {
+            return cost;
+        }
+
+        public override float GetLivingWellReward()
+        {
+            return livingWellReward * AssignedPerson.beliefs.GetStateValue("hungry");
+        }
     }
 }

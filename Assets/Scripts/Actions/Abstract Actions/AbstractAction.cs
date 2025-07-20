@@ -11,12 +11,12 @@ namespace WorldEcon.Actions
     public abstract class AbstractAction : MonoBehaviour
     {
         public string actionName = "Action";
-        public float cost = 1.0f;
+        [SerializeField] protected float cost = 1.0f;
         public ResourceData resourceData;
         public GameObject target;
         public string targetTag;
         public float duration = 0;
-        public float livingWellReward = 0f;
+        [SerializeField] protected float livingWellReward = 0f;
         public InventoryItem[] inventoryRequired;
         public WorldState[] preConditions;
         public WorldState[] afterEffects;
@@ -79,7 +79,12 @@ namespace WorldEcon.Actions
             return true;
         }
 
+        public float GetRawCost() { return cost; }
+        public float GetRawLivingWellReward() { return livingWellReward; }
+
         public abstract bool PrePerform();
         public abstract bool PostPerform();
+        public abstract float GetCost();
+        public abstract float GetLivingWellReward();
     }
 }

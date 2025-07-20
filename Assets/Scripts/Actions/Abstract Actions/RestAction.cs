@@ -37,5 +37,15 @@ namespace WorldEcon.Actions
             AssignedPerson.ResetRested();
             return true;
         }
+
+        public override float GetCost()
+        {
+            return cost;
+        }
+
+        public override float GetLivingWellReward()
+        {
+            return livingWellReward * AssignedPerson.beliefs.GetStateValue("exhausted");
+        }
     }
 }

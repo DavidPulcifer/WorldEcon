@@ -22,7 +22,7 @@ namespace WorldEcon.Actions
                     break;
                 }
             }
-            if (target == null) return false;            
+            if (target == null) return false;
             return true;
         }
 
@@ -31,8 +31,18 @@ namespace WorldEcon.Actions
             if (target == null) return false;
             AssignedPerson.inventory.AddItem(target.GetComponent<Resource>().ResourceData, 1);
             AssignedPerson.beliefs.SetWorldState("hasFood", 1);
-            target.GetComponent<Resource>().EndInteraction();            
+            target.GetComponent<Resource>().EndInteraction();
             return true;
-        }        
+        }
+        
+        public override float GetCost()
+        {
+            return cost;
+        }
+
+        public override float GetLivingWellReward()
+        {
+            return livingWellReward * AssignedPerson.beliefs.GetStateValue("hungry");
+        }
     }
 }

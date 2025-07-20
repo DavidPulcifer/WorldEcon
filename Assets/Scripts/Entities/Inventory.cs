@@ -70,14 +70,8 @@ namespace WorldEcon.Entities
 
         public void RemoveItem(GameObject itemToRemove)
         {
-            int indexToRemove = -1;
-            foreach (GameObject item in externalInventoryItems)
-            {
-                indexToRemove++;
-                if (item == itemToRemove) break;
-            }
-
-            if (indexToRemove >= -1) externalInventoryItems.RemoveAt(indexToRemove);
+            if (itemToRemove == null) return;
+            externalInventoryItems.Remove(itemToRemove);
         }
 
         public void RemoveItem(ResourceData resourceData, int number = 1)
