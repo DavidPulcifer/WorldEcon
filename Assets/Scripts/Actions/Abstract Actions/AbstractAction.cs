@@ -16,6 +16,7 @@ namespace WorldEcon.Actions
         public GameObject target;
         public string targetTag;
         public float duration = 0;
+        public float livingWellReward = 0f;
         public InventoryItem[] inventoryRequired;
         public WorldState[] preConditions;
         public WorldState[] afterEffects;

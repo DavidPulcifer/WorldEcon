@@ -10,10 +10,19 @@ namespace WorldEcon.Entities
     //GAgent
     public class Person : MonoBehaviour
     {
+        [SerializeField] int getTiredMin = 500;
+        [SerializeField] int getTiredMax = 600;
+        [SerializeField] int needReliefMin = 200;
+        [SerializeField] int needReliefMax = 300;
+        [SerializeField] int needFoodMin = 150;
+        [SerializeField] int needFoodMax = 200;
+        [SerializeField] int searchForFoodTime = 60;
+
         public List<AbstractAction> actions = new List<AbstractAction>();
         public Dictionary<SubGoal, int> goals = new Dictionary<SubGoal, int>();
         public Inventory inventory = new Inventory();
         public WorldStates beliefs = new WorldStates();
+        float livingWell = 0;
 
         EntityPlanner planner;
         Queue<AbstractAction> actionQueue;
@@ -23,10 +32,10 @@ namespace WorldEcon.Entities
         Vector3 destination = Vector3.zero;
         Vector3 exit = Vector3.zero;
 
-        SubGoal s1 = new SubGoal("rested", 1, false);
-        SubGoal s2 = new SubGoal("relief", 1, false);
-        SubGoal s3 = new SubGoal("fed", 1, false);
-        SubGoal s4 = new SubGoal("secure", 1, false);
+        SubGoal restedGoal = new SubGoal("rested", 1, false);
+        SubGoal reliefGoal = new SubGoal("relief", 1, false);
+        SubGoal fedGoal = new SubGoal("fed", 1, false);
+        SubGoal secureGoal = new SubGoal("secure", 1, false);
 
         public void Awake()
         {
@@ -36,22 +45,22 @@ namespace WorldEcon.Entities
                 actions.Add(action);
             }
 
-            goals.Add(s1, 1);
-            goals.Add(s2, 1);
-            goals.Add(s3, 1);
-            goals.Add(s4, 3);
+            goals.Add(restedGoal, 1);
+            goals.Add(reliefGoal, 1);
+            goals.Add(fedGoal, 1);
+            goals.Add(secureGoal, 3);
 
-            Invoke("GetTired", Random.Range(40, 60));
-            Invoke("NeedRelief", Random.Range(20, 30));
-            Invoke("GetHungry", Random.Range(30, 40));
-            Invoke("SearchForFood", 30);
+            Invoke("GetTired", Random.Range(getTiredMin, getTiredMax));
+            Invoke("NeedRelief", Random.Range(needReliefMin, needReliefMax));
+            Invoke("GetHungry", Random.Range(needFoodMin, needFoodMax));
+            Invoke("SearchForFood", searchForFoodTime);
         }
 
         void SearchForFood()
         {            
             if (!beliefs.HasWorldState("hungry"))
             {
-                Invoke("SearchForFood", 30);
+                Invoke("SearchForFood", searchForFoodTime);
                 return;
             }
 
@@ -63,47 +72,51 @@ namespace WorldEcon.Entities
             {
                 beliefs.RemoveState("seeFood");
             }
-            Invoke("SearchForFood", 30);
+            Invoke("SearchForFood", searchForFoodTime);
         }
 
         void GetTired()
         {
             beliefs.ModifyWorldState("exhausted", 1);
-            goals[s1] += 1;
-            Invoke("GetTired", Random.Range(40, 60));
+            livingWell -= beliefs.GetStateValue("exhausted");
+            goals[restedGoal] += 1;
+            Invoke("GetTired", Random.Range(getTiredMin, getTiredMax));
         }
 
         public void ResetRested()
         {
-            goals[s1] = 0;
+            goals[restedGoal] = 0;
         }
 
         void NeedRelief()
         {
             beliefs.ModifyWorldState("busting", 1);
-            goals[s2] += 1;
-            Invoke("NeedRelief", Random.Range(20, 30));
+            livingWell -= beliefs.GetStateValue("busting");
+            goals[reliefGoal] += 1;
+            Invoke("NeedRelief", Random.Range(needReliefMin, needReliefMax));
         }
 
         public void ResetRelief()
         {
-            goals[s2] = 0;
+            goals[reliefGoal] = 0;
         }
 
         void GetHungry()
         {
             beliefs.ModifyWorldState("hungry", 1);
-            goals[s3] += 1;
-            Invoke("GetHungry", Random.Range(30, 40));
+            livingWell -= beliefs.GetStateValue("hungry");
+            goals[fedGoal] += 1;
+            Invoke("GetHungry", Random.Range(needFoodMin, needFoodMax));
         }
 
         public void ResetHungry()
         {
-            goals[s3] = 0;
+            goals[fedGoal] = 0;
         }
 
         void CompleteAction()
         {
+            livingWell += currentAction.livingWellReward;
             currentAction.running = false;            
             currentAction.PostPerform();
             currentAction.agent.SetDestination(exit);
